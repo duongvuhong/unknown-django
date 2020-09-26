@@ -1,6 +1,6 @@
 """Defines url patterns for learning_logs."""
 
-from django.conf.urls import url
+from django.urls import path
 
 from . import views
 
@@ -8,20 +8,20 @@ app_name = 'main_app'
 
 urlpatterns = [
     # Home page.
-    url(r'^$', views.index, name='index'),
-    
+    path('', views.IndexView.as_view(), name='index'),
+
     # Show all topics.
-    url(r'^topics/$', views.topics, name='topics'),
-    
+    path('topics/', views.topics, name='topics'),
+
     # Detail page for a single topic.
-    url(r'^topics/(?P<topic_id>\d+)/$', views.topic, name='topic'),
+    path('topics/<int:topic_id>/', views.topic, name='topic'),
 
     # Page for adding a new topic
-    url(r'^new_topic/$', views.new_topic, name='new_topic'),
+    path('new_topic/', views.new_topic, name='new_topic'),
 
     # Page for adding a new entry
-    url(r'^topics/(?P<topic_id>\d+)/new_entry$', views.new_entry, name='new_entry'),
+    path('opics/<int:topic_id>/new_entry', views.new_entry, name='new_entry'),
 
     # Page for editting an existence entry
-    url(r'^edit_entry/(?P<entry_id>\d+)/$', views.edit_entry, name='edit_entry')
+    path('edit_entry/<int:entry_id>/', views.edit_entry, name='edit_entry')
 ]
