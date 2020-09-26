@@ -1,3 +1,7 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'main_app/style.css' %}">
+
 <p>
   <a href="{% url 'main_app:index' %}">Home</a> -
   <a href="{% url 'main_app:topics' %}">Topics</a> -
