@@ -1,6 +1,6 @@
 {
     "python.linting.pylintArgs": [
         "--load-plugins=pylint_django",
-        "--disable=C0114"
+        "--disable=C0114,C0115,C0116"
     ]
 }
